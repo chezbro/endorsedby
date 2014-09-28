@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Celeb:</strong>
+  <%= @endorsement.celeb_id %>
+</p>
+
+<p>
+  <strong>Brand:</strong>
+  <%= @endorsement.brand %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @endorsement.amount %>
+</p>
+
+<p>
+  <strong>Contract:</strong>
+  <%= @endorsement.contract %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @endorsement.image %>
+</p>
+
+<%= link_to 'Edit', edit_endorsement_path(@endorsement) %> |
+<%= link_to 'Back', endorsements_path %>

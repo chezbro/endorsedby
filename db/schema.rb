@@ -11,10 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140925222433) do
+ActiveRecord::Schema.define(version: 20140928223511) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "celebs", force: true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "name"
+    t.datetime "dob"
+    t.datetime "dod"
+    t.text     "bio"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "delayed_jobs", force: true do |t|
     t.integer  "priority",   default: 0, null: false
@@ -31,5 +42,17 @@ ActiveRecord::Schema.define(version: 20140925222433) do
   end
 
   add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
+
+  create_table "endorsements", force: true do |t|
+    t.integer  "celeb_id"
+    t.string   "brand"
+    t.string   "amount"
+    t.text     "contract"
+    t.string   "image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "links"
+    t.text     "other"
+  end
 
 end
